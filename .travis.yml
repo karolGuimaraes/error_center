@@ -6,14 +6,14 @@ stages:
   - name: deploy
 
 jobs:
-	include:
-		- stage: deploy
-			name: Heroku Deploy
-			script: /bin/true
-			deploy:
-				provider: heroku
-				api_key:
-					secure: "YS2Pxff6b0Ov689VTpg0riA8sOjaS6gXx6iV8EYz8D4wj68xzvHR+64XAkQIQyKuAb8JVfZ4+q4hvIHXGg6KDfOhfE8l7U+hha6L6xMyjS1o89A+Ea+A7Ry17eCwNuB8Aubh5NvWsJ+H9AqbERz75gT1woFx+K8HikttktZZc8WUDiiyGgSypTtWHeDjIQLjQWVaELB+4GtfC7HjmX+1FRRChrKJmw3ff9fFdAmmKiwOF3fW7oFZRlQGeLEll7nGbefVPTIVFWyZTez7JQP0e0nnxpePk0pReGZ2dwlTuOi2S4frf2ETdOJnughQnwBqBvLPaoBJ5zSY6Tn67yfUHaJ0GlRWTczn1ROaqgW5+1qYgG0kl2HBdcq8ra/B64hMcuQXfc0iCxkMm0jB+8pZtbJ8UbLHGPyzUPf5TWcV4VrJqKG6Wo6tKe4IKLyLyxF/3Ixh1TJT7Eroh1Nty0uDHYv+YCwoouoeyo29oDJ/ryGRi2y5i4yjSCtATCpNDV+nqmK3QgDy7ABFU2dKa/6p5Jwkp5ZHzWeRkUbCf72XajJWZyQHMGg+fkK35gTvEi9r8AMNJc3CkfvSkmLAp6S8tH0t3N0GBh8MOSNxOtmJDlQoBu7fDb1Vf+YAGof4w/q7B+qs2H/mGcBrBSdmgSIIIMezZHEVotpWB2uhv7h3jiM="
-				app: errorcenter-api
-				on: master
-				run: "python manage.py migrate"
+  include:
+    - stage: deploy
+      name: Heroku Deploy
+      script: /bin/true
+      deploy:
+        provider: heroku
+        api_key:
+          secure: "YS2Pxff6b0Ov689VTpg0riA8sOjaS6gXx6iV8EYz8D4wj68xzvHR+64XAkQIQyKuAb8JVfZ4+q4hvIHXGg6KDfOhfE8l7U+hha6L6xMyjS1o89A+Ea+A7Ry17eCwNuB8Aubh5NvWsJ+H9AqbERz75gT1woFx+K8HikttktZZc8WUDiiyGgSypTtWHeDjIQLjQWVaELB+4GtfC7HjmX+1FRRChrKJmw3ff9fFdAmmKiwOF3fW7oFZRlQGeLEll7nGbefVPTIVFWyZTez7JQP0e0nnxpePk0pReGZ2dwlTuOi2S4frf2ETdOJnughQnwBqBvLPaoBJ5zSY6Tn67yfUHaJ0GlRWTczn1ROaqgW5+1qYgG0kl2HBdcq8ra/B64hMcuQXfc0iCxkMm0jB+8pZtbJ8UbLHGPyzUPf5TWcV4VrJqKG6Wo6tKe4IKLyLyxF/3Ixh1TJT7Eroh1Nty0uDHYv+YCwoouoeyo29oDJ/ryGRi2y5i4yjSCtATCpNDV+nqmK3QgDy7ABFU2dKa/6p5Jwkp5ZHzWeRkUbCf72XajJWZyQHMGg+fkK35gTvEi9r8AMNJc3CkfvSkmLAp6S8tH0t3N0GBh8MOSNxOtmJDlQoBu7fDb1Vf+YAGof4w/q7B+qs2H/mGcBrBSdmgSIIIMezZHEVotpWB2uhv7h3jiM="
+        app: errorcenter-api
+        on: master
+        run: "python manage.py migrate"
